@@ -1,110 +1,81 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Light Simulator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-<h1>TRAFFIC LIGHT SIMULATOR</h1>
-<p class="instruction">
- Click a button below to change<br>
-the traffic light.
-</p>
 
-<div class="traffic-light"> 
+    <h1>TRAFFIC LIGHT SIMULATOR</h1>
+    
+    <p class="instruction">
+        Click a button below to change<br>the traffic light.
+    </p>
 
- <div class="light red" id="red"></div> 
+    <div class="traffic-light"> 
+        <div class="light red" id="red"></div> 
+        <div class="light yellow" id="yellow"></div> 
+        <div class="light green" id="green"></div> 
+    </div>
 
-<div class="light yellow" id="yellow"></div> 
+    <div class="controls"> 
+        <div class="button-row"> 
+            <button onclick="changeLight('red')">STOP</button> 
+            <button onclick="changeLight('yellow')">READY</button>
+        </div> 
+        <div class="button-row"> 
+            <button onclick="changeLight('green')">GO</button> 
+            <button onclick="resetLight()">RESET</button>
+        </div>
+    </div>
 
-<div class="light green" id="green"></div> 
+    <section class="registration"> 
+        <h2>Driver Registration Form</h2> 
 
-</div>
+        <form id="driverForm">
+            <div class="form-group"> 
+                <label for="driverName">Driver's Name</label> 
+                <input type="text" id="driverName" placeholder="Enter driver's name..." required>
+            </div>
 
-<div class="controls"> 
+            <div class="form-group"> 
+                <label for="carType">Car Type</label> 
+                <select id="carType" required>
+                    <option>Car</option>
+                    <option>Motorcycle</option>
+                    <option>Bus</option>
+                    <option>Truck</option>
+                </select>
+            </div>
 
-<div class="button-row"> 
+            <div class="form-group"> 
+                <label for="travelPurpose">Purpose of Travel</label>
+                <select id="travelPurpose" required>
+                    <option>Personal</option>
+                    <option>School</option>
+                    <option>Business</option>
+                </select>
+            </div>
 
-<button onclick="changeLight('red')">
-STOP
-</button> 
+            <div class="form-group"> 
+                <label for="direction">Direction</label> 
+                <select id="direction" required>
+                    <option>North</option>
+                    <option>South</option>
+                    <option>East</option>
+                    <option>West</option>
+                </select>
+            </div> 
 
-<button onclick="changeLight('yellow')">
-READY
-</button>
-</div> 
+            <button type="submit" class="submit">SUBMIT</button> 
 
-<div class="button-row"> 
+            <p id="message"></p>
+        </form>
+    </section>
+    <script src="script.js"></script>
 
-<button onclick="changeLight('green')">
-GO
-</button> 
-
-<button onclick="resetLight()">
-RESET
-</button>
-</div>
-</div>
-
-<section class="registration"> 
-
-<h2>Driver Registration Form</h2> 
-
-<form id="driverForm">
-
-<div class="form-group"> 
-
-<label for="driverName">
-Driver's Name
-</label> 
-
-<input
-type="text"
-id="driverName"
-placeholder="Enter driver's name..."
-required
->
-</div>
-
-<div class="form-group"> 
-
-<label for="carType">
-Car Type
-</label> 
-
-<select id="carType" required>
-<option>Car</option>
-<option>Motorcycle</option>
-<option>Bus</option>
-<option>Truck</option>
-</select>
-</div>
-
-<div class="form-group"> 
-
-<label for="Purpose of Travel">
-Purpose of Travel
-</label>
-<select id="Purpose of Travel" required>
-<option>Personal</option>
-<option>School</option>
-<option>Business</option>
-</select>
-</div>
-<div class="form-group"> 
-
-<label for="direction">
-Direction
-</label> 
-
-<select id="direction" required>
-<option>North</option>
-<option>South</option>
-<option>East</option>
-<option>West</option>
-</select>
-</div> 
-
-<button type="submit" class="submit">
-SUBMIT
-</button> 
-
-<p id="message"></p>
-</form>
-</section>
+</body>
+</html>
